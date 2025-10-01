@@ -36,16 +36,25 @@ print(line)
 
 
 #Add the question for which play to run
-dive = trtl.textinput("Chose Play","12 or 13?")
-fb.hideturtle()
-if dive == "12":
+play=True
+while play:
+    dive = trtl.textinput("Chose Play","12 or 13?")
+    fb.hideturtle()
+    movement=0
+    if dive == "12":
+        movement=67
+    elif dive == "q":
+        play = False
+    else: movement=120
+
     for i in line:
-        i.setheading(67)
+        i.setheading(movement)
         i.forward(50)
-    E.setheading(67)
+    E.setheading(movement)
     E.forward(200)
     fb.goto(E.xcor(),E.ycor())
     fb.showturtle()
+
 
  
  
