@@ -8,9 +8,15 @@ turtle_shapes = ["square", "square", "circle", "square", "square", "e","football
 
 #Add the football
 fb = trtl.Turtle(shape = "football")
+fb.color("brown")
+fb.penup()
 fb.setheading(90)
+E = trtl.Turtle(shape = "e")
+E.setheading(90)
+E.penup()
+E.goto(0,-100)
 startx = -100 
-starty = 0
+starty = -50
 
 line = []
 for i in range(5):
@@ -30,8 +36,17 @@ print(line)
 
 
 #Add the question for which play to run
-#dive = trtl.textinput("Chose Play","12 or 13?")
-#if dive == "12":
+dive = trtl.textinput("Chose Play","12 or 13?")
+fb.hideturtle()
+if dive == "12":
+    for i in line:
+        i.setheading(67)
+        i.forward(50)
+    E.setheading(67)
+    E.forward(200)
+    fb.goto(E.xcor(),E.ycor())
+    fb.showturtle()
+
  
  
  
