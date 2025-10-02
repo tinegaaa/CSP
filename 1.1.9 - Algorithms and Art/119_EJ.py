@@ -56,14 +56,7 @@ while play:
     fb.goto(E.xcor(),E.ycor())
     fb.showturtle()
 
-#if dive == "q":
 
-    #or i in line:
-        #i.setheading()
-   # var.goto(startx, starty)
-   # startx += 50
- 
- 
  
 
 #Have the linemen block down
