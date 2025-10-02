@@ -1,5 +1,5 @@
 import turtle as trtl
-
+import random 
 #create custom turtle
 trtl.addshape("e", ((0,0),(0,3),(-4,3),(-4,7),(1,7),(1,10),(-7,10),(-7,-7),(1,-7),(1,-4),(-4,-4),(-4,0)))
 trtl.addshape("football", ((5,0),(5,3),(4,5),(3,7),(1,9),(0,9),(-1,9),(-3,7),(-4,5),(-5,3),(-5,0),(-5,-3),(-4,-5),(-3,-7),(-1,-9),(0,-9),(1,-9),(3,-7),(4,-5),(5,-3)))
@@ -12,9 +12,13 @@ fb.color("brown")
 fb.penup()
 fb.setheading(90)
 E = trtl.Turtle(shape = "e")
+estartx = E.xcor()
+estarty = E.ycor()
 E.setheading(90)
 E.penup()
 E.goto(0,-100)
+estartx = E.xcor()
+estarty = E.ycor()
 startx = -100 
 starty = -50
 
@@ -38,7 +42,8 @@ print(line)
 #Add the question for which play to run
 play=True
 while play:
-    dive = trtl.textinput("Chose Play","12 or 13?")
+    E.goto(estartx,estarty)
+    dive = trtl.textinput("Chose Play","12 or 13? q to quit")
     fb.hideturtle()
     movement=0
     if dive == "12":
@@ -55,6 +60,38 @@ while play:
     E.forward(200)
     fb.goto(E.xcor(),E.ycor())
     fb.showturtle()
+
+
+ 
+
+import turtle
+import random
+
+def turtle_celebration():
+    screen = turtle.Screen()
+    screen.bgcolor("lightblue")
+    screen.title("Simple Celebration!")
+
+    t = turtle.Turtle()
+    t.speed(0) # Fastest speed
+
+    colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+    for _ in range(30):
+        t.color(random.choice(colors))
+        t.circle(random.randint(20, 100))
+        t.penup()
+        t.goto(random.randint(-200, 200), random.randint(-200, 200))
+        t.pendown()
+    
+    t.hideturtle()
+    screen.exitonclick()
+
+turtle_celebration() # Uncomment to run the turtle graphics
+
+
+
+
 
 
  
