@@ -1,5 +1,5 @@
 import turtle as trtl
-trtl.addshape("hanger",((0,0),(0,7),(-6,2),(0,-7),(-4,7),(4,-7)))
+trtl.addshape("hanger",((0,0),(0,7),(-6,7),(-6,2),(-5,2),(-5,6),(-1,6),(0,-7),(-4,7),(4,-7)))
 hanger = trtl.Turtle(shape = "hanger")
 hanger.color("black")
 # TODO Starting screen with the hanger, letters, and the lines that show how letters  lines there are and where they will go.
