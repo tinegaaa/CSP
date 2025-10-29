@@ -14,7 +14,25 @@ display = ["_"] * len(chosen_word)
 lives = 6
 guessed_letters = []
 
-print("Welcome to Hangman!")
+estartx = hanger.xcor()
+estarty = hanger.ycor()
+hanger.setheading(90)
+hanger.penup()
+hanger.goto(0,100)
+estartx = hanger.xcor()
+estarty = hanger.ycor()
+startx = -100 
+starty = -50
+
+trtl.write("Welcome to Hangman!")
+
+
+
+
+
+
+
+
 
 
 
