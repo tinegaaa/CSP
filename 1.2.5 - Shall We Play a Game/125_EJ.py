@@ -6,23 +6,17 @@ trtl.addshape("hanger",((0,0),(0,7),(-6,7),(-6,2),(-5,2),(-5,6),(-1,6),(-1,-6),(
 hanger = trtl.Turtle(shape = "hanger")
 hanger.color("black")
 hanger.setheading(90)
-hanger.shapesize(20)
+hanger.shapesize(15)
 
-word_list = ["alden", "tanush", "sid", "nehemiah", "sammi"]
-chosen_word = random.choice(word_list)
-display = ["_"] * len(chosen_word)
-lives = 6
-guessed_letters = []
+def hangman():
+    word_list = ["alden", "sid", "nehemiah", "tanush", "ej", "sammi"]
+    chosen_word = random.choice(word_list).lower()
+    word_length = len(chosen_word)
+    display = ["_"] * word_length
+    lives = 6
+    guessed_letters = []
 
-estartx = hanger.xcor()
-estarty = hanger.ycor()
-hanger.setheading(90)
-hanger.penup()
-hanger.goto(0,100)
-estartx = hanger.xcor()
-estarty = hanger.ycor()
-startx = -100 
-starty = -50
+
 
 trtl.write("Welcome to Hangman!")
 
