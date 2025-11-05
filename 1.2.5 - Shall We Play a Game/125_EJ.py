@@ -21,6 +21,7 @@ def hangman():
     word_list = ["alden", "sid", "nehemiah", "tanush", "ej"]
     chosen_word = random.choice(word_list).lower()
     word_length = len(chosen_word)
+    EJ.goto(0, 150)
     display = ["_"] * word_length
     lives = 6
     guessed_letters = []
