@@ -60,7 +60,7 @@ def hangman():
             write_message(f"you got lucky brochacho!  '{chosen_word}'.")
             break
         elif lives == 0:
-            write_message(f"bro for real? it was '{chosen_word}'.")
+            write_message(f"bro for real? it was {chosen_word}.")
             break
 
 
