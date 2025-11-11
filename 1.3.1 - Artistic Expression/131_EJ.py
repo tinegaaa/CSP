@@ -3,11 +3,15 @@ import turtle as trtl
 #Screen setup
 wn = trtl.Screen()
 wn.setup(width=800, height =600)
-wn.bgcolor("lightgrey")
+wn.bgpic("bg.gif")
+wn.bgpic()
 wn.title("Veteran Letter")
+wn.addshape("envv.gif")
 
-setup = trtl.Turtle()
-setup.pendown()
-setup.goto(300,200)
+
+
+#Setup envelope
+setup = trtl.Turtle(shape= "envv.gif")
+setup.shapesize()
 
 wn.mainloop()
