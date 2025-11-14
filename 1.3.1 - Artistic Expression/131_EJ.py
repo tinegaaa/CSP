@@ -10,23 +10,23 @@ wn.title("Veteran Letter")
 wn.tracer(0)
 wn.tracer(1)
 
-wn.addshape("envv.gif")
-wn.addshape("open_envv.gif")
-wn.addshape("airforce.gif")
-wn.addshape("spaceforce.gif")
-wn.addshape("coastguard.gif")
-wn.addshape("army.gif")
-wn.addshape("marine.gif")
-wn.addshape("navy.gif")
+trtl.addshape("envv.gif")
+trtl.addshape("open_envv.gif")
+trtl.addshape("airforce.gif")
+trtl.addshape("spaceforce.gif")
+trtl.addshape("coastguard.gif")
+trtl.addshape("army.gif")
+trtl.addshape("marine.gif")
+trtl.addshape("navy.gif")
 branch_images = ["marine.gif", "navy.gif", "army.gif", "airforce.gif", "coastguard.gif", "spaceforce.gif"]
 emblems = []
 
 #Setup envelope
 envelope = trtl.Turtle(shape= "envv.gif")
 
-def branch_click(emblem):
+def branch_click(x,y,emblems):
    print("Hello")
-   print(str(emblem))
+   print(str(emblems))
     
 def open_envelope(x,y):
     print("en_clicked")
@@ -53,9 +53,9 @@ def open_envelope(x,y):
             emblems.append(emblem)
             emblem.penup()
             emblem.goto(positions[index])
-            #emblem.onclick(branch_click)
+            emblem.onclick(branch_click)
             
-            wn.onclick(lambda x,y: branch_click(emblems[index-1]))
+            trtl.onclick(lambda x,y: branch_click(emblems[index-1]))
             index +=1
             
 for letter in "mnafcs":
