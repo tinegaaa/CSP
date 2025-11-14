@@ -7,6 +7,9 @@ wn.bgpic("bg.gif")
 wn.bgpic()
 wn.title("Veteran Letter")
 
+wn.tracer(0)
+wn.tracer(1)
+
 wn.addshape("envv.gif")
 wn.addshape("open_envv.gif")
 wn.addshape("airforce.gif")
@@ -15,19 +18,23 @@ wn.addshape("coastguard.gif")
 wn.addshape("army.gif")
 wn.addshape("marine.gif")
 wn.addshape("navy.gif")
-
+branch_images = ["marine.gif", "navy.gif", "army.gif", "airforce.gif", "coastguard.gif", "spaceforce.gif"]
+emblems = []
 
 #Setup envelope
 envelope = trtl.Turtle(shape= "envv.gif")
 
-
+def branch_click(emblem):
+   print("Hello")
+   print(str(emblem))
+    
 def open_envelope(x,y):
+    print("en_clicked")
     envelope.shape("open_envv.gif")
     user_message = wn.textinput("Name", "Whats your name?")
 
     if user_message:
         writer = trtl.Turtle()
-        envelope.hideturtle()
         writer.hideturtle()
         writer.penup()
         writer.goto(-395, 140)
@@ -37,26 +44,24 @@ def open_envelope(x,y):
         writer.goto(-395,70)
         writer.write("Choose a branch...", font =("Airborne 86", 40, "bold"))
 
-        positions = [(-270, -100), (-150, -150), (-30, -100), (70, -150), (170, -100), (270, -150)]
-        branch_images = ["marine.gif", "navy.gif", "army.gif", "airforce.gif", "coastguard.gif", "spaceforce.gif"]
+        positions = [(-270, -100), (-150, -150), (-30, -100), (70, -150), (170, -100), (270, -150)]     
 
-         
-        for i in range(len(branch_images)):
-            emblem = trtl.Turtle(shape=branch_images[i])
+        index = 0
+        
+        for i in branch_images:
+            emblem = trtl.Turtle(shape=branch_images[index])
+            emblems.append(emblem)
             emblem.penup()
-            emblem.goto(positions[i])
+            emblem.goto(positions[index])
+            #emblem.onclick(branch_click)
+            
+            wn.onclick(lambda x,y: branch_click(emblems[index-1]))
+            index +=1
+            
+for letter in "mnafcs":
+    wn.onkeypress(lambda l=letter: branch_click(l), letter)   
 
-
-
-
-    
-    
-
-
-
-
-
-
+#wn.onkeypress(branch_click("a"))
 envelope.onclick(open_envelope)
-
+wn.listen()
 wn.mainloop()
