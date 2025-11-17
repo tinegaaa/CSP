@@ -27,7 +27,10 @@ envelope = trtl.Turtle(shape= "envv.gif")
 def branch_click(x,y,emblems):
    print("Hello")
    print(str(emblems))
-    
+   wn.clearscreen()
+   wn.bgcolor("waterbg.gif")
+   
+
 def open_envelope(x,y):
     print("en_clicked")
     envelope.shape("open_envv.gif")

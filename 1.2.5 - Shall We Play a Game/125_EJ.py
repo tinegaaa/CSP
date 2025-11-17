@@ -9,7 +9,7 @@ wn.bgcolor("IndianRed1")
 
 
 EJ = trtl.Turtle()
-EJ.hideturtle()
+EJ.hideturtle()   
 EJ.penup()
 EJ.goto(0, 100)
 
@@ -18,7 +18,7 @@ def write_message(message):
 
 
 def hangman():
-    word_list = ["alden", "sid", "nehemiah", "tanush", "ej"]
+    word_list = ["12", "44", "98", "10", "70"]
     chosen_word = random.choice(word_list).lower()
     word_length = len(chosen_word)
     EJ.goto(0, 150)
@@ -58,6 +58,7 @@ def hangman():
         write_message(" ".join(display))
 
         if "_" not in display:
+            EJ.goto(0,185)
             write_message(f"you got lucky brochacho!  '{chosen_word}'.")
             break
         elif lives == 0:

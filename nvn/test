@@ -1,0 +1,29 @@
+import turtle
+import random
+
+screen = turtle.Screen()
+screen.bgcolor("black")
+screen.title("Fireworks Celebration")
+
+firework_turtle = turtle.Turtle()
+firework_turtle.speed(0)
+firework_turtle.hideturtle()
+
+colors = ["red", "orange", "yellow", "green", "blue", "purple", "white"]
+
+def draw_firework(x, y):
+    firework_turtle.penup()
+    firework_turtle.goto(x, y)
+    firework_turtle.pendown()
+    firework_turtle.color(random.choice(colors))
+    for _ in range(36):
+        firework_turtle.forward(random.randint(20, 50))
+        firework_turtle.backward(random.randint(20, 50))
+        firework_turtle.right(10)
+
+for _ in range(10):
+    x = random.randint(-200, 200)
+    y = random.randint(-150, 150)
+    draw_firework(x, y)
+
+turtle.done()
