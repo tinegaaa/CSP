@@ -1,4 +1,5 @@
 import turtle as trtl
+from functools import partial
 
 #Screen setup
 wn = trtl.Screen()
@@ -18,6 +19,7 @@ trtl.addshape("coastguard.gif")
 trtl.addshape("army.gif")
 trtl.addshape("marine.gif")
 trtl.addshape("navy.gif")
+branches = ["marine", "navy", "army", "airforce", "coastguard", "spaceforce"]
 branch_images = ["marine.gif", "navy.gif", "army.gif", "airforce.gif", "coastguard.gif", "spaceforce.gif"]
 emblems = []
 
@@ -28,7 +30,7 @@ def branch_click(x,y,emblems):
    print("Hello")
    print(str(emblems))
    wn.clearscreen()
-   wn.bgcolor("waterbg.gif")
+   #wn.bgpic("waterbg.gif")
    
 
 def open_envelope(x,y):
@@ -50,15 +52,14 @@ def open_envelope(x,y):
         positions = [(-270, -100), (-150, -150), (-30, -100), (70, -150), (170, -100), (270, -150)]     
 
         index = 0
-        
-        for i in branch_images:
+        for i in branches:
+            emblem = i
             emblem = trtl.Turtle(shape=branch_images[index])
             emblems.append(emblem)
             emblem.penup()
             emblem.goto(positions[index])
-            emblem.onclick(branch_click)
-            
-            trtl.onclick(lambda x,y: branch_click(emblems[index-1]))
+            emblem.onclick(partial(branch_click,emblem))
+            #trtl.onclick(lambda x,y: branch_click(emblems[index-1]))
             index +=1
             
 for letter in "mnafcs":
@@ -66,5 +67,6 @@ for letter in "mnafcs":
 
 #wn.onkeypress(branch_click("a"))
 envelope.onclick(open_envelope)
+
 wn.listen()
 wn.mainloop()
