@@ -30,7 +30,7 @@ def branch_click(x,y,emblems):
    print("Hello")
    print(str(emblems))
    wn.clearscreen()
-   #wn.bgpic("waterbg.gif")
+   wn.bgpic("waterbg.gif")
    
 
 def open_envelope(x,y):
